@@ -36,10 +36,16 @@
 
     <hr />
 
-    <div th:if="${jobs}">
-        <div th:replace="fragments :: results"></div>
-    </div>
+    <div>
+    <table class="job-listing" th:each="job : ${jobs}">
+        <tr th:each="field : ${job}">
+            <td th:text="${field.key}"></td>
+            <td th:text="${field.value}"></td>
+        </tr>
+    </table>
+</div>
 
 </div>
 </body>
 </html>
+
